@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework · Aki</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/main.js"></script>
+  <script defer src="data/homework.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">Aki<span class="accent">✿</span></a>
+  <nav class="nav">
+    <a href="index.html">About</a>
+    <a href="homework.html" data-active="true">Homework</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h1>Homework 📚</h1>
+    <p>Thêm/xoá bài tập bằng cách chỉnh file <code>/data/homework.js</code>.</p>
+    <div class="table-wrap">
+      <table class="table" id="hw-table">
+        <thead>
+          <tr><th>Ngày</th><th>Môn</th><th>Bài tập</th><th>Link</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="year"></span> Aki</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tbody = document.querySelector('#hw-table tbody');
+    HW_ITEMS.sort((a,b)=> new Date(b.date) - new Date(a.date));
+    for (const item of HW_ITEMS) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${new Date(item.date).toLocaleDateString()}</td>
+        <td>${item.course}</td>
+        <td>${item.title}</td>
+        <td><a class="link" href="${item.url}" target="_blank" rel="noopener">Mở</a></td>`;
+      tbody.appendChild(tr);
+    }
+  });
+</script>
+</body>
+</html>

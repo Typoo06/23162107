@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog · Aki</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/main.js"></script>
+  <script defer src="data/posts.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">Aki<span class="accent">✿</span></a>
+  <nav class="nav">
+    <a href="index.html">About</a>
+    <a href="homework.html">Homework</a>
+    <a href="blog.html" data-active="true">Blog</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h1>Blog 📝</h1>
+    <div id="posts" class="posts"></div>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="year"></span> Aki</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const list = document.getElementById('posts');
+    POSTS.sort((a,b)=> new Date(b.date) - new Date(a.date));
+    for (const p of POSTS) {
+      const a = document.createElement('a');
+      a.className = 'post-card';
+      a.href = `post.html?slug=${encodeURIComponent(p.slug)}`;
+      a.innerHTML = `
+        <h3>${p.title}</h3>
+        <p class="meta">${new Date(p.date).toLocaleDateString()} · ${p.tags.join(', ')}</p>
+        <p class="excerpt">${p.excerpt}</p>`;
+      list.appendChild(a);
+    }
+  });
+</script>
+</body>
+</html>

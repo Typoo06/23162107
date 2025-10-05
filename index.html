@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aki · Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/main.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">Aki<span class="accent">✿</span></a>
+  <nav class="nav">
+    <a href="index.html" data-active="true">About</a>
+    <a href="homework.html">Homework</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+</header>
+
+<main class="container about">
+  <section class="hero-card">
+    <img class="avatar" src="images/avatar.jpg" alt="Ảnh chân dung của Aki" />
+    <div>
+      <h1>Xin chào, mình là <span class="highlight">Aki</span> ♡</h1>
+      <p class="lead">Sinh viên Information Security · CTF enjoyer · Java & Web dev · Thích J‑fashion.</p>
+      <div class="badges">
+        <span class="badge">Cybersecurity</span>
+        <span class="badge">Java/JSP</span>
+        <span class="badge">CTF</span>
+      </div>
+      <div class="links">
+        <a class="btn" href="homework.html">Xem Homework</a>
+        <a class="btn ghost" href="blog.html">Đọc Blog</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid two">
+    <article class="card">
+      <h2>Học vấn</h2>
+      <ul class="cv-list">
+        <li><strong>HCMUTE</strong> — Information Security · 2023–nay</li>
+        <li>Khoá phụ: Software Engineering, Psychology, American Studies</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>Kỹ năng chính</h2>
+      <ul class="cv-list">
+        <li>Network & Security: Linux/Kali, Wireshark, Hydra, John/Hashcat, OSPF/EIGRP</li>
+        <li>Web: Java Servlets/JSP, Maven, Tomcat, MySQL, Docker</li>
+        <li>Frontend: HTML/CSS/JS, responsive UI, accessibility</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="card">
+    <h2>Dự án nổi bật</h2>
+    <div class="projects">
+      <a class="project" href="#" aria-label="Project 1">
+        <h3>CTF Lab Platform</h3>
+        <p>Môi trường lab CTF tự dựng: SQLi, XSS, SSRF, SMB enum, NTLMv2, v.v.</p>
+      </a>
+      <a class="project" href="#" aria-label="Project 2">
+        <h3>Java Web Portfolio</h3>
+        <p>Ứng dụng JSP/Servlet + MySQL triển khai trên Docker & Render.</p>
+      </a>
+      <a class="project" href="#" aria-label="Project 3">
+        <h3>EPUB Comic Module</h3>
+        <p>Trình đọc EPUB cho website truyện, hỗ trợ bookmark & theme.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="grid two">
+    <article class="card">
+      <h2>Chứng chỉ & Thành tích</h2>
+      <ul class="cv-list">
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>Liên hệ</h2>
+      <ul class="cv-list">
+        <li>Email: <a href="mailto:you@example.com">23162107@student.hcmute.edu.vn</a></li>
+        <li>GitHub: <a href="https://github.com/yourhandle">@yourhandle</a></li>
+      </ul>
+    </article>
+  </section>
+</main>
+
+<footer class="site-footer">Made with ✨ & tea · © <span id="year"></span> Aki</footer>
+</body>
+</html>
